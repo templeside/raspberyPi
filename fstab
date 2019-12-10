@@ -1,0 +1,7 @@
+proc            /proc           proc    defaults          0       0
+PARTUUID=d9b3f436-01  /boot           vfat    defaults          0       2
+PARTUUID=d9b3f436-02  /               ext4    defaults,noatime  0       1
+# a swapfile is not a swap partition, no line here
+#   use  dphys-swapfile swap[on|off]  for that
+
+UUID=376342b0-98ec-42d3-907c-846a25fe64f1  /home/pi/hdd_storage  ext4  defaults,noatime  0  0
