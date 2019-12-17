@@ -46,9 +46,20 @@ server {
 	server_name _;
 
 	location / {
+		charset utf-8;
+	        alias /home/pi/hdd_storage/webdav;
+	        autoindex on;
+	        auth_basic "WebDAV Page";
+	        auth_basic_user_file /etc/nginx/.htpasswd;
+	        dav_methods PUT DELETE MKCOL COPY MOVE;
+	        dav_ext_methods PROPFIND OPTIONS;
+	        dav_access user:rw group:rw;
+	        client_max_body_size 0;
+	        create_full_put_path on;
+
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
-		try_files $uri $uri/ =404;
+		#try_files $uri $uri/ =404;
 	}
 
 	# pass PHP scripts to FastCGI server
