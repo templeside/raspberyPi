@@ -34,3 +34,7 @@ https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate
 default-ssl.conf
 /etc/apache2/sites-available/default-ssl.conf
 
+#nginx web change
+default
+...
+/etc/nginx/sites-available/default
